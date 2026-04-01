@@ -1,0 +1,10 @@
+uvicorn[standard]
+google-auth
+python-dotenv
+pydantic
+pydantic-settings
+fastapi
+motor
+pymongo
+jinja2
+httpx

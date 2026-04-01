@@ -1,0 +1,147 @@
+/* 1. Базові налаштування */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 25px; /* Трохи менші кути */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    padding: 35px 30px; /* Зменшені внутрішні відступи */
+    width: 95%;
+    max-width: 420px; /* Компактніша ширина контейнера */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* 2. Керування видимістю */
+section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#screen-welcome {
+    display: flex;
+}
+
+/* 3. Текст та Заголовки */
+h1, h2 {
+    color: #00aaff !important;
+    font-size: 2.5rem !important; /* Зменшено з 3.5rem */
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+}
+
+#auth-status, .footer-note {
+    color: #64748b;
+    font-size: 0.95rem; /* Компактніший текст */
+    margin-bottom: 20px;
+}
+
+/* 4. Кнопки */
+.btn {
+    background-color: #ffcc00 !important;
+    color: #1e293b !important;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px; /* Зменшена висота кнопки */
+    font-size: 1.2rem !important; /* Більш акуратний шрифт */
+    font-weight: 800;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 15px 0;
+    box-shadow: 0 6px 0 #e6b800; /* Менша тінь для компактності */
+    transition: all 0.1s;
+}
+
+.btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 #e6b800;
+}
+
+/* 5. Лобі та Списки */
+.settings-box {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.setting-item {
+    margin-bottom: 15px;
+}
+
+.setting-item label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #475569;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #00aaff;
+    background: #f8fafc;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+}
+
+/* 6. Ігрове поле */
+#problem {
+    color: #00aaff !important;
+    font-size: 3.5rem !important; /* Зменшено, щоб не займало весь екран */
+    font-weight: 800;
+    margin: 25px 0;
+}
+
+.number-input {
+    width: 100%;
+    max-width: 300px;
+    height: 80px; /* Значно зменшено висоту інпуту */
+    font-size: 2.5rem !important;
+    font-weight: 800;
+    color: #00aaff;
+    text-align: center;
+    border: 3px solid #00aaff;
+    border-radius: 20px;
+    outline: none;
+}
+
+/* 7. Таблиця лідерів */
+#leaderboard-section h3 {
+    font-size: 1.3rem;
+    margin-top: 25px;
+}
+
+.leaderboard-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    font-size: 0.9rem; /* Компактний текст у таблиці */
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.leaderboard-table th {
+    color: #64748b;
+    font-weight: 600;
+}

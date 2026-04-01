@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Battle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<div id="game-container" class="container">
+
+    <section id="screen-welcome">
+        <div class="header">
+            <h1>Math Battle</h1>
+            <p id="auth-status">Увійдіть або грайте анонімно</p>
+        </div>
+
+        <div id="auth-section">
+            <div id="g_id_onload"
+                 data-client_id="{{ google_client_id }}"
+                 data-auto_prompt="false"
+                 data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
+
+            <button class="btn btn-orange" onclick="enterAsGuest()">Грати анонімно</button>
+        </div>
+
+        <button id="to-lobby-btn" style="display:none" class="btn btn-blue" onclick="showScreen('screen-lobby')">Перейти в лобі</button>
+    </section>
+
+    <section id="screen-lobby" style="display:none">
+        <div class="header">
+            <h2>Лобі</h2>
+        </div>
+
+        <div class="settings-box">
+            <div class="setting-item">
+                <label>Оберіть клас:</label>
+                <select id="level-select" class="custom-select">
+                    <option value="1">1 Клас</option>
+                    <option value="2">2 Клас</option>
+                    <option value="3">3 Клас</option>
+                    <option value="4">4 Клас</option>
+                    <option value="5">5 Клас</option>
+                    <option value="6">6 Клас</option>
+                    <option value="7">7 Клас</option>
+                    <option value="8">8 Клас</option>
+                    <option value="9">9 Клас</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label>Тривалість:</label>
+                <select id="duration-select" class="custom-select">
+                    <option value="60">1 хв</option>
+                    <option value="180">3 хв</option>
+                    <option value="300">5 хв</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="btn btn-blue" onclick="handleStartClick()">Почати гру</button>
+
+        <div id="leaderboard-section">
+            <h3>Топ гравців</h3>
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Гравець</th> <th>Клас</th>
+                        <th>Час</th>
+                        <th>Бали</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-list">
+                    <tr><td colspan="4" style="text-align:center;">Завантаження...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="screen-battle" style="display:none">
+        <div id="stats-bar" class="stats-container">
+            <div class="stat-badge">Очки: <span id="score">0</span></div>
+            <div class="stat-badge timer">Час: <span id="timer">00:00</span></div>
+        </div>
+
+        <div id="question-box">
+            <div id="problem">Приготуйтеся...</div>
+            <input type="number" id="answer-input" placeholder="?" autocomplete="off" class="number-input">
+        </div>
+
+        <button class="btn btn-orange" onclick="handleExitClick()">Здатися</button>
+        <p class="footer-note">Натисніть <b>Enter</b> для надсилання відповіді</p>
+    </section>
+
+</div>
+
+<script src="static/app.js"></script>
+</body>
+</html>
